@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepLink - 원격에 특화된 고성능 원격 제어 프로그램</title>
+    <link rel="icon" href="./deeplink.ico">
+    <!-- SEO: 도메인 바뀌면 아래 https://nex7248.github.io/deeplink-remote-site/ 를 전부 새 주소로, robots.txt · sitemap.xml 도 같이 -->
+    <meta name="description" content="원격에 특화된 고성능 원격 제어 프로그램 DeepLink. 핸드폰 하나로 내 PC의 업무, 영상 편집, 3D 모델링, 게임까지 어떤 고사양 작업도 무리 없이. 안드로이드 앱 · 아이폰 웹 접속 지원.">
+    <meta name="keywords" content="원격제어, 원격 데스크탑, 원격 프로그램, 폰으로 PC 원격, 아이폰 원격제어, 원격 게임, 원격 모델링, 팀뷰어 대안, DeepLink, 딥링크">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://nex7248.github.io/deeplink-remote-site/">
+    <meta name="theme-color" content="#00c764">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 공유 미리보기 (카톡 · 위챗 · 페이스북 · X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DeepLink">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:title" content="DeepLink - 원격에 특화된 고성능 원격 제어 프로그램">
+    <meta property="og:description" content="업무 · 작업 · 모델링 · 게임까지. 내 PC를 폰 하나로. LAN 지연 5ms 미만, 4K 240Hz.">
+    <meta property="og:url" content="https://nex7248.github.io/deeplink-remote-site/">
+    <meta property="og:image" content="https://nex7248.github.io/deeplink-remote-site/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DeepLink - 내 PC를 폰 하나로">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DeepLink - 원격에 특화된 고성능 원격 제어 프로그램">
+    <meta name="twitter:description" content="업무 · 작업 · 모델링 · 게임까지. 내 PC를 폰 하나로. LAN 지연 5ms 미만, 4K 240Hz.">
+    <meta name="twitter:image" content="https://nex7248.github.io/deeplink-remote-site/img/og-image.jpg">
+
+    <!-- 검색 등록 인증: 값 받으면 주석 풀기 -->
+    <!-- <meta name="google-site-verification" content="구글 서치 콘솔 값"> -->
+    <!-- <meta name="naver-site-verification" content="네이버 서치어드바이저 값"> -->
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DeepLink",
+  "url": "https://nex7248.github.io/deeplink-remote-site/",
+  "image": "https://nex7248.github.io/deeplink-remote-site/img/og-image.jpg",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Windows, Android, iOS (Web)",
+  "description": "원격에 특화된 고성능 원격 제어 프로그램. 핸드폰으로 내 PC의 업무, 작업, 모델링, 게임을 원격으로 이용합니다.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "기본",
+      "price": "0",
+      "priceCurrency": "KRW"
+    },
+    {
+      "@type": "Offer",
+      "name": "원격 라이선스 1개월",
+      "price": "8032",
+      "priceCurrency": "KRW"
+    },
+    {
+      "@type": "Offer",
+      "name": "원격 라이선스 3개월",
+      "price": "24097",
+      "priceCurrency": "KRW"
+    },
+    {
+      "@type": "Offer",
+      "name": "원격 라이선스 6개월",
+      "price": "48195",
+      "priceCurrency": "KRW"
+    },
+    {
+      "@type": "Offer",
+      "name": "원격 라이선스 12개월",
+      "price": "96389",
+      "priceCurrency": "KRW"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "DEEPCLOUDX INFORMATION TECH PTE. LTD.",
+    "email": "info@deeplink.cloud"
+  }
+}
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "DeepLink는 어떤 프로그램인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "원격에 특화된 고성능 원격 제어 프로그램입니다. 집이나 회사 PC에 설치해 두면 폰 · 태블릿 · 다른 PC에서 그 PC를 그대로 조작할 수 있습니다. 문서 작업부터 영상 편집, 3D 모델링, 게임까지 PC 성능 그대로 씁니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "폰 사양이 낮아도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 계산은 모두 원격 PC가 하고 폰은 화면만 받기 때문에, 폰 사양보다 인터넷 연결 상태가 더 중요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "아이폰에서도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "안드로이드는 전용 앱, 아이폰 · 아이패드는 Chrome 브라우저에서 웹으로 접속합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "원격 입력이 막힌 게임도 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "프로그램 상단 메뉴의 '게임 드라이버'를 체크하면 원격 입력을 막는 게임도 플레이할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "보안은 안전한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "모든 데이터는 AES-256 으로 암호화되고 DTLS 1.2 로 연결을 보호합니다. 허가된 기기만 접속할 수 있고, 개인정보 입력 없이 블록체인 기반 계정으로 가입합니다."
+      }
+    }
+  ]
+}
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- 광고 픽셀: ID 받으면 GTM 안에서 넣는 걸 권장. 직접 넣을 땐 아래 주석 풀고 ID 교체 -->
+    <!-- Meta Pixel: fbq('init', 'META_PIXEL_ID'); fbq('track', 'PageView'); -->
+    <!-- 네이버 프리미엄 로그분석 / 카카오 픽셀: 각 발급 스크립트 그대로 -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PTF5NC9L');</script>
+    <!-- End Google Tag Manager -->
+    <script src="translations.js"></script>
+    <script src="i18n.js"></script>
+    <script src="tracker.js"></script>
+    <script src="js/ui-base.js" defer></script>
+    <link rel="stylesheet" href="css/brand.css">
+    <link rel="stylesheet" href="css/brand-light.css">
+    <script>
+        // 테마: 기본 흰색, 헤더 버튼으로 다크 전환 (선택은 브라우저에 기억)
+        try { if (localStorage.getItem('dl-theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) { }
+    </script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.162.0/examples/jsm/"
+      }
+    }
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4MFQX8JK41"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-4MFQX8JK41');
+</script>
+
+<body class="flex flex-col min-h-screen">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTF5NC9L" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- 1. 헤더: 딥링크 게임 사이트와 별도 운영 → 이 페이지 안 메뉴만 -->
+    <header class="site-header fixed w-full z-50">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#top" class="flex-shrink-0" aria-label="DeepLink 처음으로">
+                <img decoding="async" src="Frame 16.png" alt="DeepLink" class="logo header-logo">
+            </a>
+            <div class="flex items-center gap-3 md:gap-6">
+            <nav class="hidden md:flex items-center gap-8" aria-label="주요 메뉴">
+                <a href="#features" class="font-bold transition">기능</a>
+                <a href="#compare" class="font-bold transition">성능 비교</a>
+                <a href="#guide" class="font-bold transition">사용 안내</a>
+                <a href="#pricing" class="font-bold transition">요금</a>
+                <a href="#faq" class="font-bold transition">FAQ</a>
+                <a href="#download" class="btn-neon nav-cta text-sm px-5 py-2.5" data-track="header_download">다운로드</a>
+            </nav>
+            <button type="button" class="theme-toggle" data-theme-toggle aria-label="다크 모드로 바꾸기">
+                <i class="fas fa-moon" aria-hidden="true"></i><i class="fas fa-sun" aria-hidden="true"></i>
+            </button>
+            <button type="button" onclick="toggleMobileMenu()" class="md:hidden text-white focus:outline-none p-2"
+                aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu" data-mobile-menu-button>
+                <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+            </button>
+            </div>
+        </div>
+        <div id="mobile-menu" role="navigation" aria-label="모바일 메뉴" aria-hidden="true"
+            class="hidden md:hidden border-t absolute w-full left-0 top-20 shadow-lg">
+            <div class="flex flex-col px-6 py-6 gap-6 text-center" onclick="if(event.target.closest('a'))toggleMobileMenu()">
+                <a href="#features" class="font-bold text-lg">기능</a>
+                <a href="#compare" class="font-bold text-lg">성능 비교</a>
+                <a href="#guide" class="font-bold text-lg">사용 안내</a>
+                <a href="#pricing" class="font-bold text-lg">요금</a>
+                <a href="#faq" class="font-bold text-lg">FAQ</a>
+                <a href="#download" class="btn-neon nav-cta text-lg py-3" data-track="mobile_menu_download">다운로드</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow" id="top">
+
+        <!-- 2. 3D 히어로: 모니터(내 PC) 화면이 폰으로 그대로. 스크롤하면 업무 → 작업 → 모델링 → 게임 -->
+        <!-- 영상이 준비되면 각 .hero-copy 에 data-video="경로.mp4" 를 넣으면 그 단계 화면이 영상으로 바뀜 -->
+        <section class="hero-track" id="heroTrack" aria-label="DeepLink 소개">
+            <div class="hero-stage">
+                <div class="floor" aria-hidden="true"></div>
+                <canvas id="scene" aria-hidden="true"></canvas>
+
+                <div class="stream-hud" aria-hidden="true">
+                    <span class="dot"></span>
+                    <span id="hudMode">연결됨</span>
+                    <span>지연 <b id="hudLatency">5</b>ms</span>
+                    <span><b id="hudFps">60</b>FPS</span>
+                    <span><b>4K</b></span>
+                </div>
+
+                <div class="hero-copy" data-step="0" data-mode="intro" data-active="true">
+                    <img src="Frame 16.png" alt="DeepLink" class="hero-logo">
+                    <p class="hero-slogan"><span class="link-bar" aria-hidden="true"></span>원격에 특화된 고성능 원격 제어 프로그램</p>
+                    <h1 class="hero-title mt-8">내 PC를,<br><span class="text-brand">폰 하나로.</span></h1>
+                    <p class="hero-sub mt-6">업무 · 작업 · 모델링 · 게임까지.<br>어떤 고사양 작업도 내 PC 성능 그대로, 폰에서 무리 없이.</p>
+                    <div class="flex flex-row gap-3 mt-7 md:mt-9">
+                        <a href="#download" class="btn-neon text-base md:text-lg px-6 md:px-8 py-3 md:py-3.5" data-track="hero_download">무료 다운로드 <i
+                                class="fas fa-arrow-down text-sm" aria-hidden="true"></i></a>
+                        <a href="#pricing" class="btn-ghost text-base md:text-lg px-6 md:px-8 py-3 md:py-3.5">요금 보기</a>
+                    </div>
+                </div>
+
+                <div class="hero-copy" data-step="1" data-mode="work" data-active="false">
+                    <p class="use-no">01 · 업무</p>
+                    <h2 class="use-title mt-3">회사 PC가<br><span class="text-brand">주머니 속으로.</span></h2>
+                    <p class="hero-sub mt-5">보고서, 엑셀, 사내 프로그램. 출근 전에도, 출장 중에도 내 PC를 그대로 열어 쓰세요.</p>
+                    <div class="chips mt-7"><span class="chip">파일 전송</span><span class="chip">멀티 스트림</span><span
+                            class="chip">프라이버시 스크린</span></div>
+                </div>
+
+                <div class="hero-copy" data-step="2" data-mode="edit" data-active="false">
+                    <p class="use-no">02 · 작업</p>
+                    <h2 class="use-title mt-3">편집도 렌더링도<br><span class="text-brand">밖에서 확인.</span></h2>
+                    <p class="hero-sub mt-5">무거운 작업은 PC가 하고, 폰으로는 보고 고치기만. 렌더링 걸어두고 나가도 진행 상황을 바로 봅니다.</p>
+                    <div class="chips mt-7"><span class="chip">4:4:4 트루 컬러</span><span class="chip">10.7억 색상</span><span
+                            class="chip">화면 녹화 · 캡처</span></div>
+                </div>
+
+                <div class="hero-copy" data-step="3" data-mode="model" data-active="false">
+                    <p class="use-no">03 · 모델링</p>
+                    <h2 class="use-title mt-3">고사양 툴을<br><span class="text-brand">가볍게.</span></h2>
+                    <p class="hero-sub mt-5">Photoshop, ZBrush, Unity처럼 GPU를 쓰는 툴도 계산은 PC가. 폰에는 화면만 옵니다. 태블릿 펜과 게임패드도 그대로.</p>
+                    <div class="chips mt-7"><span class="chip">태블릿 펜 지원</span><span class="chip">가상 디스플레이</span><span
+                            class="chip">4K</span></div>
+                </div>
+
+                <div class="hero-copy" data-step="4" data-mode="game" data-active="false">
+                    <p class="use-no">04 · 게임</p>
+                    <h2 class="use-title mt-3">게임까지,<br><span class="text-brand">끊김 없이.</span></h2>
+                    <p class="hero-sub mt-5">가장 까다로운 원격 작업, 게임도 지연 없이. 터치 키보드와 게임패드 버튼으로 PC 게임을 폰에서 그대로 즐기세요.</p>
+                    <div class="chips mt-7"><span class="chip">최대 240Hz</span><span class="chip">LAN 지연 5ms 미만</span><span
+                            class="chip">게임 드라이버</span></div>
+                </div>
+
+                <nav class="use-nav" aria-label="활용 분야">
+                    <button type="button" data-step="1">업무</button>
+                    <button type="button" data-step="2">작업</button>
+                    <button type="button" data-step="3">모델링</button>
+                    <button type="button" data-step="4">게임</button>
+                </nav>
+            </div>
+        </section>
+
+        <!-- 3. 숫자 -->
+        <section class="sec">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title scroll-mt-28" id="features">원격인데,<br>내 PC 앞에 앉은 것처럼</h2>
+                    <p class="sec-desc">원격 하나에만 집중해서 만든 성능. 일반 원격 프로그램과는 화면부터 다릅니다.</p>
+                </div>
+                <div class="stat-row reveal">
+                    <div class="stat">
+                        <p class="stat-num">5<small>ms</small></p>
+                        <p class="stat-label">LAN 지연 5ms 미만</p>
+                        <p class="stat-note">도시 간 10ms · 장거리 30ms 미만</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-num">240<small>Hz</small></p>
+                        <p class="stat-label">4K 고주사율</p>
+                        <p class="stat-note">빠른 게임도 프레임 그대로</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-num">4:4:4</p>
+                        <p class="stat-label">무손실 색상</p>
+                        <p class="stat-note">10.7억 색상 · 글자와 색 번짐 없이</p>
+                    </div>
+                    <div class="stat">
+                        <p class="stat-num">10<small>MB</small></p>
+                        <p class="stat-label">가벼운 설치</p>
+                        <p class="stat-note">안내대로 따라 하면 설정 끝</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3-1. 팀뷰어 비교 (실측값은 사용자 테스트 결과로 채움: data-v 에 숫자, 단위는 data-unit) -->
+        <!-- TODO: 실제 비교 테스트 값 + 테스트 조건(회선, PC 사양, 해상도, 날짜) 받으면 교체. 값이 없으면 막대는 비어 보임 -->
+        <section class="sec pt-0 scroll-mt-24" id="compare">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">같은 PC, 같은 회선.<br><span class="text-brand">TeamViewer보다 빠르게.</span></h2>
+                    <p class="sec-desc">직접 비교 테스트한 결과입니다.</p>
+                </div>
+                <div class="card cmp-card reveal">
+                    <div class="cmp-row" data-better="low">
+                        <p class="cmp-label">입력 지연<span>낮을수록 좋음</span></p>
+                        <div class="cmp-bars">
+                            <div class="cmp-bar is-us"><span class="cmp-name">DeepLink</span><i style="--w:0"></i><b data-v="" data-unit="ms">측정값</b></div>
+                            <div class="cmp-bar"><span class="cmp-name">TeamViewer</span><i style="--w:0"></i><b data-v="" data-unit="ms">측정값</b></div>
+                        </div>
+                    </div>
+                    <div class="cmp-row" data-better="high">
+                        <p class="cmp-label">평균 프레임<span>높을수록 좋음</span></p>
+                        <div class="cmp-bars">
+                            <div class="cmp-bar is-us"><span class="cmp-name">DeepLink</span><i style="--w:0"></i><b data-v="" data-unit="FPS">측정값</b></div>
+                            <div class="cmp-bar"><span class="cmp-name">TeamViewer</span><i style="--w:0"></i><b data-v="" data-unit="FPS">측정값</b></div>
+                        </div>
+                    </div>
+                    <div class="cmp-row" data-better="high">
+                        <p class="cmp-label">화질 (PSNR)<span>높을수록 좋음</span></p>
+                        <div class="cmp-bars">
+                            <div class="cmp-bar is-us"><span class="cmp-name">DeepLink</span><i style="--w:0"></i><b data-v="" data-unit="dB">측정값</b></div>
+                            <div class="cmp-bar"><span class="cmp-name">TeamViewer</span><i style="--w:0"></i><b data-v="" data-unit="dB">측정값</b></div>
+                        </div>
+                    </div>
+                    <p class="cmp-cond">테스트 조건: 회선 · PC 사양 · 해상도 · 측정일 기재 예정</p>
+                </div>
+                <div class="shot-slot mt-4 reveal" style="min-height:300px">
+                    <span class="slot-tag"><i class="fas fa-video" aria-hidden="true"></i>촬영 예정 · 같은 화면 나란히 비교 영상</span>
+                    <p class="place-big">왼쪽 DeepLink, 오른쪽 TeamViewer</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 네트워크 -->
+        <section class="sec pt-0">
+            <div class="container mx-auto px-6 max-w-7xl grid lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal">
+                    <h2 class="sec-title">와이파이가 흔들려도<br><span class="text-brand">화면은 그대로.</span></h2>
+                    <p class="sec-desc">패킷 손실 5%, 네트워크 지연 100ms 환경에서도 높은 프레임을 유지합니다. 지하철, 카페, 해외 숙소 와이파이에서도.</p>
+                    <ul class="tech-list mt-10">
+                        <li>FEC 손실 복구<span>잃어버린 데이터를 다시 받지 않고 복원</span></li>
+                        <li>대역폭 예측<span>속도가 떨어지기 전에 미리 조절</span></li>
+                        <li>SVC 인코딩<span>회선에 맞춰 화질 단계를 바로 전환</span></li>
+                        <li>스마트 경로 선택<span>가장 빠른 길로 연결</span></li>
+                        <li>P2P · IPv6<span>최대 95% NAT 통과, 서버를 거치지 않음</span></li>
+                        <li>프레임 적응<span>화면 움직임에 맞춰 프레임 조절</span></li>
+                    </ul>
+                </div>
+                <div class="card net-card reveal">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-5">
+                        <p class="font-bold text-white">네트워크 지연이 튀어도</p>
+                        <div class="net-legend"><span><i class="lg-lat"></i>네트워크 지연</span><span><i class="lg-fps"></i>화면 프레임</span></div>
+                    </div>
+                    <canvas class="net-graph" id="netGraph" aria-label="네트워크 지연은 크게 흔들리지만 화면 프레임은 일정하게 유지되는 그래프" role="img"></canvas>
+                    <p class="text-xs text-gray-500 mt-4">설명용 그래프입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 조작 -->
+        <section class="sec pt-0">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 reveal">
+                    <div>
+                        <h2 class="sec-title">조작은 내 손에 맞게</h2>
+                        <p class="sec-desc">화면 터치가 곧 마우스. 키보드 버튼과 게임패드 중에 골라 쓰세요.</p>
+                    </div>
+                    <div class="seg" role="group" aria-label="조작 방식">
+                        <button type="button" data-mode="keyboard" aria-pressed="true">키보드</button>
+                        <button type="button" data-mode="gamepad" aria-pressed="false">게임패드</button>
+                    </div>
+                </div>
+                <div class="phone-frame max-w-4xl mx-auto reveal">
+                    <img id="modeImg" src="img/phone-keyboard.jpg"
+                        alt="폰 화면에 Esc, F1, Alt, Enter, 숫자, 영문 키 버튼이 떠 있는 키보드 조작 모드" loading="lazy" decoding="async">
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">실제 DeepLink 원격 화면 · 안드로이드</p>
+                <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
+                    <li class="border-t border-white/15 pt-5">
+                        <p class="font-bold text-lg text-white">터치 = 마우스</p>
+                        <p class="text-gray-400 text-sm mt-1">누르면 클릭, 끌면 드래그</p>
+                    </li>
+                    <li class="border-t border-white/15 pt-5">
+                        <p class="font-bold text-lg text-white">외부 장치 지원</p>
+                        <p class="text-gray-400 text-sm mt-1">태블릿 펜, 게임패드, 게이밍 키보드 · 마우스</p>
+                    </li>
+                    <li class="border-t border-white/15 pt-5">
+                        <p class="font-bold text-lg text-white">게임 드라이버</p>
+                        <p class="text-gray-400 text-sm mt-1">원격 입력이 막힌 게임도 플레이</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. 어디서든 (사진은 직접 촬영해서 교체) -->
+        <section class="sec pt-0">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">PC는 집에,<br>나는 어디든</h2>
+                    <p class="sec-desc">이동 중 · 회사 · 학교 · 군 복무 · 해외</p>
+                </div>
+                <div class="place-grid">
+                    <figure class="shot-photo span-2 reveal">
+                        <img src="img/photo-anywhere.jpg" alt="차 안에서 폰으로 집 PC 게임을 원격으로 하는 실제 사용 사진" loading="lazy"
+                            decoding="async" style="object-position: center 70%;">
+                        <figcaption>
+                            <p class="place-kicker">이동 중</p>
+                            <p class="place-big">잠깐 비는 시간에도<br>내 PC 그대로</p>
+                        </figcaption>
+                    </figure>
+                    <div class="shot-slot span-w reveal">
+                        <span class="slot-tag"><i class="fas fa-camera" aria-hidden="true"></i>촬영 예정 · 카페에서 폰으로 엑셀</span>
+                        <p class="place-kicker">업무</p>
+                        <p class="place-big">카페에서 회사 PC 열기</p>
+                    </div>
+                    <div class="shot-slot reveal">
+                        <span class="slot-tag"><i class="fas fa-camera" aria-hidden="true"></i>촬영 예정 · 렌더링 확인</span>
+                        <p class="place-kicker">작업</p>
+                        <p class="place-big">퇴근길에<br>렌더링 확인</p>
+                    </div>
+                    <div class="shot-slot reveal">
+                        <span class="slot-tag"><i class="fas fa-camera" aria-hidden="true"></i>촬영 예정 · 태블릿 펜 모델링</span>
+                        <p class="place-kicker">모델링</p>
+                        <p class="place-big">태블릿으로<br>스컬핑</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. 기기 -->
+        <section class="sec pt-0">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">가진 기기 그대로</h2>
+                    <p class="sec-desc">PC에 설치해 두고, 폰 · 태블릿 · 다른 PC에서 접속하세요.</p>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 device-grid">
+                    <div class="card device-card reveal">
+                        <i class="fab fa-windows di" aria-hidden="true"></i>
+                        <p class="role">원격으로 켤 PC</p>
+                        <h3>Windows PC</h3>
+                        <p>집이나 회사 PC에 DeepLink를 설치하고 로그인해 두면 준비 끝.</p>
+                    </div>
+                    <div class="card device-card reveal">
+                        <i class="fab fa-android di" aria-hidden="true"></i>
+                        <p class="role">접속하는 기기</p>
+                        <h3>안드로이드</h3>
+                        <p>전용 앱으로 접속. 키보드 · 게임패드 버튼을 화면에 띄워 조작합니다.</p>
+                    </div>
+                    <div class="card device-card reveal">
+                        <i class="fab fa-apple di" aria-hidden="true"></i>
+                        <p class="role">접속하는 기기</p>
+                        <h3>아이폰 · 아이패드</h3>
+                        <p>설치 없이 Chrome 브라우저에서 웹으로 바로 접속.</p>
+                    </div>
+                    <div class="card device-card reveal">
+                        <i class="fas fa-laptop di" aria-hidden="true"></i>
+                        <p class="role">접속하는 기기</p>
+                        <h3>노트북 · 다른 PC</h3>
+                        <p>저사양 노트북에서도 고사양 PC의 성능 그대로.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. 보안 -->
+        <section class="sec pt-0">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">내 PC는<br><span class="text-brand">나만 연다.</span></h2>
+                </div>
+                <div class="sec-row reveal">
+                    <div><b>전송 암호화</b><span>모든 화면 · 입력 데이터를 AES-256 으로 암호화해 전송합니다.</span></div>
+                    <div><b>연결 보호</b><span>DTLS 1.2 프로토콜. 허가된 기기만 접속할 수 있습니다.</span></div>
+                    <div><b>계정 보호</b><span>블록체인 기반 계정이라 개인정보를 입력하지 않습니다. 기기 정보는 중앙 서버를 거치지 않고 P2P 로 전달됩니다.</span></div>
+                    <div><b>기기 공개 범위</b><span>내가 정한 사람에게만, 정한 기기만 보입니다.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. 요금 -->
+        <section id="pricing" class="sec pt-0 scroll-mt-24">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="sec-head text-center reveal">
+                    <h2 class="sec-title">무료로 시작하고,<br>필요하면 프리미엄</h2>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="card plan reveal">
+                        <p class="text-lg font-bold text-gray-300">기본</p>
+                        <p class="plan-price mt-3">무료</p>
+                        <ul class="space-y-3 mt-8">
+                            <li><i class="fas fa-check" aria-hidden="true"></i>원격 데스크탑</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>최고 화질</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>게이밍 키보드 · 마우스</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>파일 전송</li>
+                        </ul>
+                        <a href="#download" class="btn-ghost w-full mt-10 py-3.5" data-track="pricing_free_download">무료 다운로드</a>
+                    </div>
+                    <!-- 가격 변경 시 head 의 JSON-LD 와 remote.html 도 같이 수정 -->
+                    <div class="card plan plan-premium reveal">
+                        <p class="text-lg font-bold text-[#00FF85]">프리미엄 · 원격 라이선스</p>
+                        <div class="seg seg-period mt-5" role="group" aria-label="이용 기간">
+                            <button type="button" data-plan="1m" data-price="8,032" aria-pressed="true">1개월</button>
+                            <button type="button" data-plan="3m" data-price="24,097" aria-pressed="false">3개월</button>
+                            <button type="button" data-plan="6m" data-price="48,195" aria-pressed="false">6개월</button>
+                            <button type="button" data-plan="12m" data-price="96,389" aria-pressed="false">12개월</button>
+                        </div>
+                        <p class="plan-price mt-6">₩<span id="planPrice">8,032</span></p>
+                        <ul class="space-y-3 mt-8">
+                            <li><i class="fas fa-check" aria-hidden="true"></i><b class="text-white">기본 기능 모두 포함</b></li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>폰 · 태블릿으로 내 PC 원격제어</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>원격 SSH · 프라이버시 스크린</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>가상 디스플레이 · 멀티 스트림</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>4:4:4 트루 컬러</li>
+                        </ul>
+                        <button type="button" id="planBuy" data-plan="1m" onclick="buyLicense(this.dataset.plan)"
+                            class="btn-neon w-full mt-10 py-3.5">라이선스 구매</button>
+                        <p class="text-xs text-gray-500 mt-4 text-center">구매 · 활성화는 DeepLink 프로그램의 '원격' 메뉴에서 진행됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. 사용 안내 (원격만) -->
+        <section id="guide" class="sec pt-0 scroll-mt-24">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 reveal">
+                    <div>
+                        <h2 class="sec-title">사용 안내</h2>
+                        <p class="sec-desc">PC를 한 번 설정해 두면, 다음부터는 폰에서 누르기만 하면 됩니다.</p>
+                    </div>
+                    <div class="seg guide-tabs" role="tablist" aria-label="안내 선택">
+                        <button type="button" role="tab" data-tab="pc" aria-selected="true" aria-pressed="true">PC</button>
+                        <button type="button" role="tab" data-tab="android" aria-selected="false" aria-pressed="false">안드로이드</button>
+                        <button type="button" role="tab" data-tab="ios" aria-selected="false" aria-pressed="false">아이폰</button>
+                        <button type="button" role="tab" data-tab="control" aria-selected="false" aria-pressed="false">조작</button>
+                    </div>
+                </div>
+
+                <div class="guide-panel" data-panel="pc" role="tabpanel">
+                    <ol class="guide-steps">
+                        <li class="card step">
+                            <p class="step-no">01</p>
+                            <h3>PC에 DeepLink 설치</h3>
+                            <p>원격으로 켤 집 · 회사 PC(Windows)에 설치합니다. <a href="#download" class="link-green">다운로드 →</a></p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">02</p>
+                            <h3>계정 만들기</h3>
+                            <p>개인정보 입력 없이 바로 만들어집니다. 이때 나오는 <b>개인키는 꼭 따로 보관</b>하세요. 폰에서 같은 계정으로 로그인할 때 필요합니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">03</p>
+                            <h3>'원격' 메뉴에서 라이선스 활성화</h3>
+                            <p>왼쪽 메뉴의 '원격'에서 라이선스를 구매 · 활성화합니다.</p>
+                            <div class="shot"><img src="img/step-menu.png" alt="DeepLink 왼쪽 메뉴의 '원격'" loading="lazy" decoding="async" style="object-position:center"></div>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">04</p>
+                            <h3>My List 에서 내 PC 확인</h3>
+                            <p>로그인한 PC가 My List 에 뜨면 준비 끝. PC는 켜둔 채로 두세요.</p>
+                            <div class="shot"><img src="img/step-app.png" alt="DeepLink My List 에 '집 메인 컴퓨터'가 보이는 화면" loading="lazy" decoding="async"></div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="guide-panel" data-panel="android" role="tabpanel" hidden>
+                    <ol class="guide-steps">
+                        <li class="card step">
+                            <p class="step-no">01</p>
+                            <h3>앱 설치</h3>
+                            <p>안드로이드 전용 앱(APK)을 받아 설치합니다. <a href="#download" class="link-green">앱 받기 →</a></p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">02</p>
+                            <h3>같은 계정으로 로그인</h3>
+                            <p>PC에서 만든 계정 그대로 로그인합니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">03</p>
+                            <h3>내 PC 선택</h3>
+                            <p>My List 에서 PC를 누르면 바로 연결됩니다. 폰을 가로로 돌려 쓰세요.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">04</p>
+                            <h3>조작 방식 고르기</h3>
+                            <p>왼쪽 위 메뉴에서 키보드 · 게임패드 버튼을 켜고 끕니다.</p>
+                            <div class="shot"><img src="img/phone-keyboard.jpg" alt="폰 화면에 키보드 버튼이 떠 있는 원격 화면" loading="lazy" decoding="async" style="object-position:center"></div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="guide-panel" data-panel="ios" role="tabpanel" hidden>
+                    <!-- TODO: 아이폰 웹 원격 접속 주소 받아서 02 단계에 링크 -->
+                    <ol class="guide-steps">
+                        <li class="card step">
+                            <p class="step-no">01</p>
+                            <h3>Chrome 열기</h3>
+                            <p>아이폰 · 아이패드는 앱 설치 없이 Chrome 브라우저로 접속합니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">02</p>
+                            <h3>웹 원격 접속</h3>
+                            <p>DeepLink 웹 원격 페이지를 열고 PC와 같은 계정으로 로그인합니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">03</p>
+                            <h3>홈 화면에 추가</h3>
+                            <p>공유 → '홈 화면에 추가'를 해두면 다음부터 앱처럼 바로 열 수 있습니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">04</p>
+                            <h3>내 PC 선택</h3>
+                            <p>My List 에서 PC를 누르면 연결됩니다. 가로로 돌리면 화면이 꽉 찹니다.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="guide-panel" data-panel="control" role="tabpanel" hidden>
+                    <ol class="guide-steps">
+                        <li class="card step">
+                            <p class="step-no">01</p>
+                            <h3>터치 = 마우스</h3>
+                            <p>한 번 누르면 클릭, 누른 채로 끌면 드래그입니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">02</p>
+                            <h3>키보드 버튼</h3>
+                            <p>Esc, F1, Alt, Enter, 숫자 · 영문 키를 화면 위에 띄워 씁니다.</p>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">03</p>
+                            <h3>게임패드 버튼</h3>
+                            <p>조이스틱과 A · B · X · Y · L1 · R1 버튼으로 패드 게임을 조작합니다.</p>
+                            <div class="shot"><img src="img/phone-gamepad.jpg" alt="폰 화면에 게임패드 버튼이 떠 있는 원격 화면" loading="lazy" decoding="async" style="object-position:center"></div>
+                        </li>
+                        <li class="card step">
+                            <p class="step-no">04</p>
+                            <h3>게임 드라이버</h3>
+                            <p>원격 입력이 막힌 게임은 PC 프로그램 상단의 '게임 드라이버'를 체크하세요.</p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="card tips mt-6 reveal">
+                    <p class="font-bold text-white mb-3">끊김 없이 쓰려면</p>
+                    <ul>
+                        <li>PC의 <b>절전 · 최대 절전 모드를 끄세요.</b> PC가 잠들면 연결할 수 없습니다.</li>
+                        <li>PC는 가능하면 <b>유선 랜</b>, 폰은 <b>5GHz 와이파이</b>나 5G가 좋습니다.</li>
+                        <li>회선이 느리면 화질이 자동으로 조절됩니다. 따로 설정할 필요 없어요.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10-1. 다운로드 -->
+        <!-- TODO: 별도 사이트로 나가면 Windows 설치 파일 · 아이폰 웹 원격 주소를 직접 링크 -->
+        <section id="download" class="sec pt-0 scroll-mt-24">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">다운로드</h2>
+                    <p class="sec-desc">기본 기능은 무료입니다.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-3 md:gap-4 dl-grid">
+                    <div class="card device-card reveal">
+                        <i class="fab fa-windows di" aria-hidden="true"></i>
+                        <h3>Windows</h3>
+                        <p>원격으로 켤 PC에 설치</p>
+                        <a href="https://deeplinkgame.com/download.html" class="btn-neon mt-auto py-3" data-track="download_windows">PC용 받기</a>
+                    </div>
+                    <div class="card device-card reveal">
+                        <i class="fab fa-android di" aria-hidden="true"></i>
+                        <h3>안드로이드</h3>
+                        <p>전용 앱 (APK)</p>
+                        <a href="https://pub-1b47391b45ed418d8a02bf732d2f944a.r2.dev/deeplink_app.apk" class="btn-ghost mt-auto py-3" data-track="download_android">앱 받기</a>
+                    </div>
+                    <div class="card device-card reveal">
+                        <i class="fab fa-apple di" aria-hidden="true"></i>
+                        <h3>아이폰 · 아이패드</h3>
+                        <p>설치 없이 Chrome 웹으로 접속</p>
+                        <a href="#guide" class="btn-ghost mt-auto py-3" onclick="openGuideTab('ios')" data-track="download_ios_guide">접속 방법 보기</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FAQ -->
+        <section id="faq" class="sec pt-0 scroll-mt-24">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <div class="sec-head reveal">
+                    <h2 class="sec-title">자주 묻는 질문</h2>
+                </div>
+                <div class="faq reveal">
+                    <details open>
+                        <summary>DeepLink는 어떤 프로그램인가요?<i class="fas fa-plus" aria-hidden="true"></i></summary>
+                        <p>원격에 특화된 고성능 원격 제어 프로그램입니다. 집이나 회사 PC에 설치해 두면 폰 · 태블릿 · 다른 PC에서 그 PC를 그대로 조작할 수 있습니다. 문서 작업부터 영상 편집, 3D 모델링, 게임까지 PC 성능 그대로 씁니다.</p>
+                    </details>
+                    <details>
+                        <summary>폰 사양이 낮아도 되나요?<i class="fas fa-plus" aria-hidden="true"></i></summary>
+                        <p>네. 계산은 모두 원격 PC가 하고 폰은 화면만 받기 때문에, 폰 사양보다 인터넷 연결 상태가 더 중요합니다.</p>
+                    </details>
+                    <details>
+                        <summary>아이폰에서도 되나요?<i class="fas fa-plus" aria-hidden="true"></i></summary>
+                        <p>안드로이드는 전용 앱, 아이폰 · 아이패드는 Chrome 브라우저에서 웹으로 접속합니다.</p>
+                    </details>
+                    <details>
+                        <summary>원격 입력이 막힌 게임도 되나요?<i class="fas fa-plus" aria-hidden="true"></i></summary>
+                        <p>프로그램 상단 메뉴의 '게임 드라이버'를 체크하면 원격 입력을 막는 게임도 플레이할 수 있습니다.</p>
+                    </details>
+                    <details>
+                        <summary>보안은 안전한가요?<i class="fas fa-plus" aria-hidden="true"></i></summary>
+                        <p>모든 데이터는 AES-256 으로 암호화되고 DTLS 1.2 로 연결을 보호합니다. 허가된 기기만 접속할 수 있고, 개인정보 입력 없이 블록체인 기반 계정으로 가입합니다.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. 마지막 CTA -->
+        <section class="container mx-auto px-6 max-w-7xl pb-16 md:pb-28">
+            <div class="cta p-7 sm:p-10 md:p-16 reveal">
+                <div class="cta-mark" aria-hidden="true"></div>
+                <div class="relative">
+                    <img src="Frame 16.png" alt="DeepLink" class="hero-logo">
+                    <p class="hero-slogan"><span class="link-bar" aria-hidden="true"></span>원격에 특화된 고성능 원격 제어 프로그램</p>
+                    <h2 class="sec-title mt-8">지금 켜둔 PC,<br><span class="text-brand">폰에서 이어서.</span></h2>
+                    <div class="flex flex-col sm:flex-row gap-3 mt-10">
+                        <a href="#download" class="btn-neon px-8 py-3.5 text-lg" data-track="cta_download">무료 다운로드</a>
+                        <a href="#guide" class="btn-ghost px-8 py-3.5 text-lg">사용 안내</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer mt-auto py-10">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div
+                class="footer-links flex flex-wrap items-center gap-x-5 md:gap-6 text-xs md:text-sm font-bold text-gray-300 border-b border-white/10 pb-2 mb-4">
+                <a href="https://deeplinkgame.com/terms.html" class="hover:text-white transition" data-i18n="footer_terms">이용약관</a>
+                <a href="https://deeplinkgame.com/privacy.html" class="hover:text-white font-black text-white transition"
+                    data-i18n="footer_privacy">개인정보처리방침</a>
+                <button onclick="toggleContactModal()" class="hover:text-[#00FF85] transition"
+                    data-i18n="footer_cs">고객센터 ></button>
+            </div>
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                <div class="shrink-0">
+                    <img loading="lazy" decoding="async" src="Frame 16.png" alt="DeepLink" data-i18n="[alt]alt_logo"
+                        class="logo h-10 w-auto">
+                </div>
+                <div class="text-[11px] md:text-xs text-gray-500 leading-relaxed">
+                    <p class="font-bold text-gray-300 mb-1" data-i18n="footer_company_name">DEEPCLOUDX INFORMATION TECH
+                        PTE. LTD.</p>
+                    <div class="flex flex-col md:flex-row md:flex-wrap md:gap-x-2">
+                        <span data-i18n="footer_company_uen">UEN : 202235426C</span>
+                        <span class="hidden md:block text-gray-600">|</span>
+                        <span data-i18n="footer_address">Adress : 33 UBI AVENUE 3 #08-43 VERTEX SINGAPORE
+                            (408868)</span>
+                        <span class="hidden md:block text-gray-600">|</span>
+                        <span data-i18n="footer_contact">Contact Email : info@deeplink.cloud</span>
+                    </div>
+                    <p class="mt-2 font-serif tracking-wide" data-i18n="footer_company_copyright">Copyright © DeepLink.
+                        All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 z-[60] hidden" data-modal="true" aria-hidden="true">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" onclick="toggleContactModal()">
+        </div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden p-8 text-center border border-gray-100"
+            role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" tabindex="-1">
+            <div class="mb-8">
+                <div
+                    class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-100">
+                    <i class="fas fa-headset text-3xl text-gray-700" aria-hidden="true"></i>
+                </div>
+                <h3 id="contactModalTitle" class="text-2xl font-black text-gray-900 mb-2" data-i18n="modal_cs_title">
+                    고객센터 문의</h3>
+                <p class="text-gray-500 text-sm leading-relaxed" data-i18n="modal_cs_desc">궁금한 점이 있으신가요?<br>아래 채널로 문의주시면
+                    <strong>가장 빠르게</strong> 답변해 드립니다.</p>
+            </div>
+            <div class="space-y-3"><a href="https://pf.kakao.com/_ftZDn/friend" target="_blank"
+                    class="flex items-center justify-center gap-3 w-full bg-[#FAE100] text-[#371D1E] font-bold py-4 rounded-xl hover:brightness-95 transition shadow-sm"><i
+                        class="fas fa-comment text-lg" aria-hidden="true"></i> <span data-i18n="modal_kakao">카카오톡
+                        상담하기</span></a><a href="https://discord.gg/5fmRk8sZpP" target="_blank"
+                    class="flex items-center justify-center gap-3 w-full bg-[#5865F2] text-white font-bold py-4 rounded-xl hover:brightness-110 transition shadow-sm"><i
+                        class="fab fa-discord text-lg" aria-hidden="true"></i> <span data-i18n="modal_discord">디스코드
+                        커뮤니티</span></a></div>
+            <button type="button" onclick="toggleContactModal()"
+                class="mt-8 text-gray-400 text-sm hover:text-gray-600 underline" data-i18n="modal_close"
+                aria-label="Close dialog" data-modal-focus>닫기</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const m = document.getElementById('mobile-menu');
+            const btn = document.querySelector('[data-mobile-menu-button]');
+            if (!m) return;
+            const willOpen = m.classList.contains('hidden');
+            m.classList.toggle('hidden', !willOpen);
+            m.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
+            if (btn) btn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        }
+        function toggleContactModal() {
+            if (window.DLUI?.toggleModal) {
+                window.DLUI.toggleModal('contactModal');
+                return;
+            }
+            document.getElementById('contactModal').classList.toggle('hidden');
+        }
+
+
+        // 라이선스는 클라이언트 '원격' 메뉴에서 구매·활성화 → 클라이언트 실행, 미설치면 다운로드 안내
+        function buyLicense(plan) {
+            if (typeof gtag === 'function') gtag('event', 'remote_license_click', { plan: plan, page: 'brand' });
+            window.location.href = "deeplink://run";
+            setTimeout(async function () {
+                const msg = '딥링크 프로그램이 실행되지 않았나요?\n프로그램을 설치한 뒤 좌측 \'원격\' 메뉴에서 라이선스를 구매할 수 있습니다.\n다운로드 페이지로 이동할까요?';
+                const ok = window.DLUI?.confirm ? await window.DLUI.confirm(msg) : confirm(msg);
+                if (ok) location.hash = "download";
+            }, 1500);
+        }
+
+        // 전환 추적: data-track 클릭 → GA4 이벤트 + GTM dataLayer (광고 전환은 GTM 에서 이 이벤트로 연결)
+        document.addEventListener('click', e => {
+            const el = e.target.closest('[data-track]');
+            if (!el) return;
+            const name = el.dataset.track;
+            const isDownload = name.startsWith('download_');
+            const params = { link_id: name, link_text: el.textContent.trim().slice(0, 40), page: 'remote_brand' };
+            if (typeof gtag === 'function') gtag('event', isDownload ? 'file_download' : 'cta_click', params);
+            (window.dataLayer = window.dataLayer || []).push({ event: 'dl_' + name, ...params });
+        });
+
+        // 사용 안내 탭
+        function openGuideTab(name) {
+            document.querySelectorAll('.guide-tabs [data-tab]').forEach(b => {
+                const on = b.dataset.tab === name;
+                b.setAttribute('aria-selected', on);
+                b.setAttribute('aria-pressed', on);
+            });
+            document.querySelectorAll('.guide-panel').forEach(p => p.hidden = p.dataset.panel !== name);
+        }
+        document.querySelectorAll('.guide-tabs [data-tab]').forEach(b => b.addEventListener('click', () => openGuideTab(b.dataset.tab)));
+
+        // 조작 방식 토글
+        (function () {
+            const img = document.getElementById('modeImg');
+            const modes = {
+                keyboard: ['img/phone-keyboard.jpg', '폰 화면에 Esc, F1, Alt, Enter, 숫자, 영문 키 버튼이 떠 있는 키보드 조작 모드'],
+                gamepad: ['img/phone-gamepad.jpg', '폰 화면에 조이스틱과 A, B, X, Y, L1, R1 버튼이 떠 있는 게임패드 조작 모드']
+            };
+            document.querySelectorAll('.seg [data-mode]').forEach(btn => btn.addEventListener('click', () => {
+                document.querySelectorAll('.seg [data-mode]').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+                const [src, alt] = modes[btn.dataset.mode];
+                img.style.opacity = 0;
+                setTimeout(() => { img.src = src; img.alt = alt; img.style.opacity = 1; }, 180);
+            }));
+        })();
+
+        // 이용 기간 선택
+        (function () {
+            const price = document.getElementById('planPrice');
+            const buy = document.getElementById('planBuy');
+            document.querySelectorAll('[data-plan][data-price]').forEach(btn => btn.addEventListener('click', () => {
+                document.querySelectorAll('[data-plan][data-price]').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
+                price.textContent = btn.dataset.price;
+                buy.dataset.plan = btn.dataset.plan;
+            }));
+        })();
+
+        // 다크/흰색 전환 버튼
+        (function () {
+            const root = document.documentElement;
+            const btn = document.querySelector('[data-theme-toggle]');
+            const sync = () => btn.setAttribute('aria-label', root.dataset.theme === 'light' ? '다크 모드로 바꾸기' : '흰색 모드로 바꾸기');
+            sync();
+            btn.addEventListener('click', () => {
+                const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+                root.dataset.theme = next;
+                try { localStorage.setItem('dl-theme', next); } catch (e) { }
+                sync();
+                dispatchEvent(new Event('themechange'));
+            });
+        })();
+
+        // 네트워크 그래프: 지연(회색)은 흔들려도 프레임(초록)은 일정
+        (function () {
+            const cv = document.getElementById('netGraph');
+            const ctx = cv.getContext('2d');
+            const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let w = 0, h = 0, t = 0, visible = false;
+            function size() {
+                const dpr = Math.min(devicePixelRatio || 1, 2);
+                w = cv.clientWidth; h = cv.clientHeight;
+                cv.width = w * dpr; cv.height = h * dpr;
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            }
+            function lat(x) {
+                const spike = Math.max(0, Math.sin(x * 0.9) * Math.sin(x * 0.37)) ** 3;
+                return 0.25 + 0.12 * Math.sin(x * 2.3) + 0.08 * Math.sin(x * 5.1) + 0.5 * spike;
+            }
+            function draw() {
+                ctx.clearRect(0, 0, w, h);
+                const light = document.documentElement.dataset.theme === 'light';
+                ctx.strokeStyle = light ? 'rgba(0,0,0,.06)' : 'rgba(255,255,255,.06)';
+                ctx.lineWidth = 1;
+                for (let i = 1; i < 4; i++) { ctx.beginPath(); ctx.moveTo(0, h * i / 4); ctx.lineTo(w, h * i / 4); ctx.stroke(); }
+                const n = 120;
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = light ? '#b8c0c6' : '#5b6670';
+                ctx.beginPath();
+                for (let i = 0; i <= n; i++) {
+                    const x = i / n * w, v = lat(i / 8 + t);
+                    i ? ctx.lineTo(x, h - v * h) : ctx.moveTo(x, h - v * h);
+                }
+                ctx.stroke();
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = light ? '#00b35c' : '#00ff85';
+                                ctx.beginPath();
+                for (let i = 0; i <= n; i++) {
+                    const x = i / n * w, v = 0.86 + 0.012 * Math.sin((i / 8 + t) * 3);
+                    i ? ctx.lineTo(x, h - v * h) : ctx.moveTo(x, h - v * h);
+                }
+                ctx.stroke();
+            }
+            function loop() {
+                if (!visible) return;
+                t += 0.012;
+                draw();
+                requestAnimationFrame(loop);
+            }
+            size(); draw();
+            addEventListener('resize', () => { size(); draw(); });
+            addEventListener('themechange', draw);
+            if (!reduce && 'IntersectionObserver' in window) {
+                new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) loop(); }).observe(cv);
+            }
+        })();
+
+        // 비교 막대: data-v 값이 있으면 막대 길이 계산 (행 안에서 큰 값 = 100%)
+        (function () {
+            document.querySelectorAll('.cmp-row').forEach(row => {
+                const bars = [...row.querySelectorAll('.cmp-bar')];
+                const vals = bars.map(b => parseFloat(b.querySelector('b').dataset.v));
+                if (vals.some(isNaN)) return;
+                const max = Math.max(...vals);
+                bars.forEach((b, i) => {
+                    const el = b.querySelector('b');
+                    b.querySelector('i').style.setProperty('--w', (vals[i] / max).toFixed(3));
+                    el.textContent = vals[i] + el.dataset.unit;
+                });
+            });
+        })();
+
+        // 스크롤 등장
+        (function () {
+            const items = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) { items.forEach(el => el.classList.add('is-visible')); return; }
+            const io = new IntersectionObserver(entries => entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+            }), { threshold: 0.12 });
+            items.forEach(el => io.observe(el));
+        })();
+    </script>
+    <script type="module" src="js/brand3d.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nex7248.github.io/deeplink-remote-site/sitemap.xml
