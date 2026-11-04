@@ -378,6 +378,14 @@ body {
     box-shadow: 0 0 0 1px #2a2a2e inset, 0 40px 90px -30px rgba(0, 0, 0, .7);
 }
 
+.phone-frame video {
+    display: block;
+    width: 100%;
+    border-radius: 25px;
+    aspect-ratio: 16 / 8;
+    object-fit: cover;
+}
+
 .phone-frame img {
     display: block;
     width: 100%;

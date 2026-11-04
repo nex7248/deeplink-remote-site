@@ -351,8 +351,10 @@
                     </div>
                 </div>
                 <div class="phone-frame max-w-4xl mx-auto reveal">
-                    <img id="modeImg" src="img/phone-keyboard.jpg"
-                        alt="폰 화면에 Esc, F1, Alt, Enter, 숫자, 영문 키 버튼이 떠 있는 키보드 조작 모드" loading="lazy" decoding="async">
+                    <video id="modeVideo" src="img/phone-keyboard-demo.mp4"
+                        autoplay muted loop playsinline></video>
+                    <video id="modeImg" src="img/phone-gamepad-demo.mp4"
+                        muted loop playsinline style="display:none"></video>
                 </div>
                 <p class="text-sm text-gray-500 mt-4 text-center">실제 DeepLink 원격 화면 · 안드로이드</p>
                 <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-14">
@@ -888,16 +890,21 @@
 
         // 조작 방식 토글
         (function () {
-            const img = document.getElementById('modeImg');
-            const modes = {
-                keyboard: ['img/phone-keyboard.jpg', '폰 화면에 Esc, F1, Alt, Enter, 숫자, 영문 키 버튼이 떠 있는 키보드 조작 모드'],
-                gamepad: ['img/phone-gamepad.jpg', '폰 화면에 조이스틱과 A, B, X, Y, L1, R1 버튼이 떠 있는 게임패드 조작 모드']
-            };
+            const keyboardVideo = document.getElementById('modeVideo');
+            const gamepadVideo = document.getElementById('modeImg');
             document.querySelectorAll('.seg [data-mode]').forEach(btn => btn.addEventListener('click', () => {
                 document.querySelectorAll('.seg [data-mode]').forEach(b => b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'));
-                const [src, alt] = modes[btn.dataset.mode];
-                img.style.opacity = 0;
-                setTimeout(() => { img.src = src; img.alt = alt; img.style.opacity = 1; }, 180);
+                if (btn.dataset.mode === 'keyboard') {
+                    gamepadVideo.style.display = 'none';
+                    gamepadVideo.pause();
+                    keyboardVideo.style.display = 'block';
+                    keyboardVideo.play();
+                } else {
+                    keyboardVideo.style.display = 'none';
+                    keyboardVideo.pause();
+                    gamepadVideo.style.display = 'block';
+                    gamepadVideo.play();
+                }
             }));
         })();
 
