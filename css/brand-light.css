@@ -147,3 +147,16 @@
 [data-theme="light"] .theme-toggle:hover { border-color: var(--green-ink); color: var(--green-ink); }
 [data-theme="light"] .net-legend .lg-lat { background: #b8c0c6; }
 [data-theme="light"] .net-legend .lg-fps { background: #00b35c; }
+
+/* 가상 마우스 배너 */
+[data-theme="light"] .vmouse-banner { background: radial-gradient(60% 80% at 0% 50%, rgba(0,160,80,.06), transparent 70%), var(--surface); border-color: rgba(0,160,80,.2); }
+[data-theme="light"] .vmouse-icon { background: rgba(0,160,80,.1); border-color: rgba(0,160,80,.2); color: var(--green-ink); }
+[data-theme="light"] .vmouse-label { color: var(--green-ink); }
+[data-theme="light"] .vmouse-title { color: var(--text); }
+
+/* 공지사항 */
+[data-theme="light"] .notice-link:hover { background: rgba(0,0,0,.03); }
+[data-theme="light"] .notice-link:hover .notice-title { color: var(--green-ink); }
+[data-theme="light"] .notice-badge--new    { background: rgba(0,160,80,.1); color: var(--green-ink); border-color: rgba(0,160,80,.25); }
+[data-theme="light"] .notice-badge--update { background: rgba(37,99,235,.08); color: #2563eb; border-color: rgba(37,99,235,.2); }
+[data-theme="light"] .notice-more:hover { color: var(--green-ink); }

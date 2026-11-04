@@ -518,6 +518,107 @@ body {
 .faq details[open] summary i { transform: rotate(45deg); }
 .faq details p { padding: 0 0 22px; color: var(--muted); line-height: 1.75; }
 
+/* ---------- 가상 마우스 배너 ---------- */
+.vmouse-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 40px;
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 255, 133, .2);
+    background:
+        radial-gradient(60% 80% at 0% 50%, rgba(0, 255, 133, .07), transparent 70%),
+        var(--surface);
+}
+
+.vmouse-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(0, 255, 133, .12);
+    border: 1px solid rgba(0, 255, 133, .25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--neon);
+}
+
+.vmouse-label {
+    font-family: var(--num);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .1em;
+    color: var(--neon);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.vmouse-title {
+    font-family: var(--display);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    line-height: 1.35;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.vmouse-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+    .vmouse-banner { flex-direction: column; gap: 16px; }
+}
+
+/* ---------- 공지사항 ---------- */
+.notice-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line-2); }
+.notice-item { border-bottom: 1px solid var(--line); }
+.notice-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 4px;
+    color: var(--text);
+    text-decoration: none;
+    transition: background .15s ease;
+}
+.notice-link:hover { background: rgba(255,255,255,.03); }
+.notice-link:hover .notice-title { color: var(--neon); }
+
+.notice-badge {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 52px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .05em;
+}
+.notice-badge--new    { background: rgba(0,255,133,.15); color: var(--neon); border: 1px solid rgba(0,255,133,.3); }
+.notice-badge--update { background: rgba(99,179,237,.12); color: #63b3ed; border: 1px solid rgba(99,179,237,.25); }
+.notice-badge--notice { background: rgba(255,255,255,.07); color: var(--muted); border: 1px solid var(--line-2); }
+
+.notice-title { flex: 1; font-size: .95rem; font-weight: 500; transition: color .15s ease; }
+.notice-date  { flex-shrink: 0; font-size: 12px; color: var(--muted); font-family: var(--num); }
+
+.notice-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted);
+    transition: color .15s ease;
+}
+.notice-more:hover { color: var(--neon); }
+
 /* ---------- 마지막 CTA ---------- */
 .cta {
     position: relative;
