@@ -16,7 +16,7 @@ const isLight = () => document.documentElement.dataset.theme === 'light';
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const STEPS = copies.length;
 const MODES = copies.map(c => c.dataset.mode);
-const MODE_NAME = { work: '업무', edit: '작업', model: '모델링', game: '게임' };
+const MODE_NAME = { lostark: '로스트 아크', lineage: '리니지', work: '업무', edit: '작업', model: '모델링', game: '게임' };
 
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, k) => a + (b - a) * k;
@@ -519,7 +519,7 @@ const screen = {
         } else if (!this.video || !this.videoShown) {
             // 영상 로딩 전(또는 자동 재생이 막히면)에는 대표 이미지, 없으면 시안 화면. 반복 재생으로 처음으로 돌아갈 때는 마지막 프레임 유지 (깜빡임 방지)
             if (this.poster && this.poster.naturalWidth) c.drawImage(this.poster, 0, 0, W, H);
-            else painters[this.mode](c, this.t);
+            else (painters[this.mode] || painters.game)(c, this.t);
         }
         c.restore();
         // 폰: 모니터 화면을 폰 비율로 잘라서 + 조작 오버레이
@@ -527,7 +527,7 @@ const screen = {
         const sh = W * ph / pw;
         p.drawImage(this.mon, 0, (H - sh) / 2, W, sh, 0, 0, pw, ph);
         // 영상 단계는 영상 위에 조작 버튼을 안 그림. 게임은 영상 위에도 게임패드 버튼을 얹어 '폰으로 조작' 느낌
-        if (!this.videoShown || this.mode === 'game') phoneOverlay(p, this.mode, pw, ph, this.t);
+        if (!this.videoShown || this.mode === 'game' || this.mode === 'lostark' || this.mode === 'lineage') phoneOverlay(p, this.mode, pw, ph, this.t);
     }
 };
 screen.init();
@@ -537,7 +537,7 @@ addEventListener('scroll', onScroll, { passive: true });
 /* ---------- HUD 숫자 ---------- */
 setInterval(() => {
     hudLatency.textContent = String(4 + Math.round(Math.random() * 2));
-    hudFps.textContent = MODES[step] === 'game' ? String(238 + Math.round(Math.random() * 2)) : '60';
+    hudFps.textContent = ['game', 'lostark', 'lineage'].includes(MODES[step]) ? String(238 + Math.round(Math.random() * 2)) : '60';
 }, 900);
 
 /* ---------- 3D ---------- */
@@ -643,7 +643,9 @@ if (renderer) {
 
     // 단계별 자세. [폰 위치, 폰 회전, 모니터 회전Y, 카메라 거리]
     const POSES = {
-        game: { pp: [0.75, -0.95, 1.3], pr: [-0.12, -0.42, 0.04], my: -0.28, cz: 9.0 },
+        game:    { pp: [0.75, -0.95, 1.3], pr: [-0.12, -0.42, 0.04], my: -0.28, cz: 9.0 },
+        lostark: { pp: [0.75, -0.95, 1.3], pr: [-0.12, -0.42, 0.04], my: -0.28, cz: 9.0 },
+        lineage: { pp: [0.75, -0.95, 1.3], pr: [-0.12, -0.42, 0.04], my: -0.28, cz: 9.0 },
         work: { pp: [0.85, -0.85, 1.5], pr: [-0.1, -0.3, 0.02], my: -0.18, cz: 8.6 },
         edit: { pp: [0.6, -0.9, 1.6], pr: [-0.14, -0.5, 0.06], my: -0.34, cz: 8.6 },
         model: { pp: [0.9, -0.8, 1.7], pr: [-0.08, -0.22, -0.04], my: -0.12, cz: 8.4 },
