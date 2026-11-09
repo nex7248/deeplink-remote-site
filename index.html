@@ -235,7 +235,7 @@
                 </div>
 
                 <!-- 메인: 리니지 영상 -->
-                <div class="hero-copy" data-step="0" data-mode="lineage" data-active="true" data-video="img/phone-gamepad-demo.mp4">
+                <div class="hero-copy" data-step="0" data-mode="lineage" data-active="true" data-video="img/game-lostark.mp4">
                     <img src="Frame 16.png" alt="DeepLink" class="hero-logo">
                     <p class="hero-slogan"><span class="link-bar" aria-hidden="true"></span>원격에 특화된 고성능 원격 제어 프로그램</p>
                     <h1 class="hero-title mt-8">내 PC를,<br><span class="text-brand">폰 하나로.</span></h1>
@@ -248,7 +248,7 @@
                 </div>
 
                 <!-- 게임 탭: 로스트아크 영상 -->
-                <div class="hero-copy" data-step="1" data-mode="lostark" data-active="false" data-video="img/game-lostark.mp4" data-poster="img/game-lostark.jpg">
+                <div class="hero-copy" data-step="1" data-mode="lostark" data-active="false" data-video="img/phone-gamepad-demo.mp4">
                     <img src="Frame 16.png" alt="DeepLink" class="hero-logo">
                     <p class="hero-slogan"><span class="link-bar" aria-hidden="true"></span>원격에 특화된 고성능 원격 제어 프로그램</p>
                     <h2 class="hero-title mt-8">안되는<br><span class="text-brand">게임은 없다!</span></h2>
@@ -386,12 +386,25 @@
                 </ul>
 
                 <div class="vmouse-banner reveal">
-                    <div class="vmouse-icon" aria-hidden="true"><i class="fa-solid fa-computer-mouse"></i></div>
                     <div class="vmouse-body">
                         <p class="vmouse-label">가상 마우스</p>
                         <p class="vmouse-title">타 프로그램으로 못 하는 게임,<br><span class="text-brand">DeepLink는 전부 됩니다.</span></p>
-                        <p class="vmouse-desc">팀뷰어 · AnyDesk 같은 원격 프로그램은 마우스 커서를 직접 제어하지 못해 FPS · 액션 · MMORPG 등 대부분의 게임에서 입력이 막힙니다. DeepLink의 가상 마우스는 PC에 실제 마우스가 연결된 것처럼 동작해, 원격으로 막힌 게임이 없습니다.</p>
+                        <div class="vmouse-compare">
+                            <div class="vmouse-compare-item vmouse-no">
+                                <span class="vmouse-compare-badge">팀뷰어 · AnyDesk</span>
+                                <p><i class="fa-solid fa-xmark"></i> 마우스 커서 직접 제어 불가</p>
+                                <p><i class="fa-solid fa-xmark"></i> FPS · MMORPG · 액션 게임 입력 차단</p>
+                                <p><i class="fa-solid fa-xmark"></i> 리니지, LoL, 발로란트 <b>불가</b></p>
+                            </div>
+                            <div class="vmouse-compare-item vmouse-yes">
+                                <span class="vmouse-compare-badge">DeepLink</span>
+                                <p><i class="fa-solid fa-check"></i> 가상 마우스로 실제처럼 제어</p>
+                                <p><i class="fa-solid fa-check"></i> 원격 입력 차단 게임 전부 OK</p>
+                                <p><i class="fa-solid fa-check"></i> 리니지, LoL, 발로란트 <b>전부 됨</b></p>
+                            </div>
+                        </div>
                     </div>
+                    <video class="vmouse-video" src="img/game-lostark.mp4" autoplay muted loop playsinline></video>
                 </div>
             </div>
         </section>

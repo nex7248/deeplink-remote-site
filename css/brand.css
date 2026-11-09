@@ -529,8 +529,8 @@ body {
 /* ---------- 가상 마우스 배너 ---------- */
 .vmouse-banner {
     display: flex;
-    align-items: flex-start;
-    gap: 24px;
+    align-items: stretch;
+    gap: 32px;
     margin-top: 40px;
     padding: 32px;
     border-radius: 20px;
@@ -538,6 +538,7 @@ body {
     background:
         radial-gradient(60% 80% at 0% 50%, rgba(0, 255, 133, .07), transparent 70%),
         var(--surface);
+    overflow: hidden;
 }
 
 .vmouse-icon {
@@ -572,14 +573,68 @@ body {
     margin-bottom: 12px;
 }
 
-.vmouse-desc {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.75;
+.vmouse-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
 }
 
-@media (max-width: 640px) {
-    .vmouse-banner { flex-direction: column; gap: 16px; }
+.vmouse-compare-item {
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.vmouse-compare-item p {
+    font-size: 13px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vmouse-compare-badge {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .05em;
+    margin-bottom: 4px;
+}
+
+.vmouse-no {
+    background: rgba(255, 60, 60, .07);
+    border: 1px solid rgba(255, 60, 60, .2);
+}
+
+.vmouse-no .vmouse-compare-badge { color: #f87171; }
+.vmouse-no p { color: #f87171; }
+.vmouse-no p i { color: #ef4444; flex-shrink: 0; }
+.vmouse-no p b { font-weight: 900; }
+
+.vmouse-yes {
+    background: rgba(0, 255, 133, .07);
+    border: 1px solid rgba(0, 255, 133, .2);
+}
+
+.vmouse-yes .vmouse-compare-badge { color: var(--neon); }
+.vmouse-yes p { color: #d1fae5; }
+.vmouse-yes p i { color: var(--neon); flex-shrink: 0; }
+.vmouse-yes p b { font-weight: 900; color: var(--neon); }
+
+.vmouse-video {
+    flex-shrink: 0;
+    width: 260px;
+    border-radius: 12px;
+    object-fit: cover;
+    align-self: stretch;
+}
+
+@media (max-width: 768px) {
+    .vmouse-banner { flex-direction: column; gap: 20px; }
+    .vmouse-video { width: 100%; height: 200px; }
+    .vmouse-compare { grid-template-columns: 1fr; }
 }
 
 /* ---------- 공지사항 ---------- */
